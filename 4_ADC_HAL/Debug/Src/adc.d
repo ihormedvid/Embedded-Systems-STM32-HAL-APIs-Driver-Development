@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c \
+Src/adc.o: ../Src/adc.c ../Inc/adc.h \
  D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Inc/stm32f4xx_hal_conf.h \
  D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -30,8 +30,8 @@ Src/main.o: ../Src/main.c \
  D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h \
- ../Inc/adc.h ../Inc/uart.h
+ D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h
+../Inc/adc.h:
 D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Inc/stm32f4xx_hal_conf.h:
 D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -64,5 +64,3 @@ D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim
 D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 D:/projects/stm_hal/4_ADC_HAL/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h:
-../Inc/adc.h:
-../Inc/uart.h:
