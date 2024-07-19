@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c \
+Src/tim.o: ../Src/tim.c \
  D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Inc/stm32f4xx_hal_conf.h \
  D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -31,7 +31,7 @@ Src/main.o: ../Src/main.c \
  D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h \
- ../Inc/adc.h ../Inc/uart.h ../Inc/tim.h
+ ../Inc/tim.h
 D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Inc/stm32f4xx_hal_conf.h:
 D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -64,6 +64,4 @@ D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_
 D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 D:/projects/stm_hal/7_Timer_Timebase/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h:
-../Inc/adc.h:
-../Inc/uart.h:
 ../Inc/tim.h:
