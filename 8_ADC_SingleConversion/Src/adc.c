@@ -1,20 +1,23 @@
 #include "adc.h"
 
-ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc1;
 
-uint32_t pa1_adc_read(void)
+void adc_pa0_count_conversion_init(void);
+void adc_pa0_single_conversion_init(void);
+
+uint32_t pa0_adc_read(void)
 {
 	return HAL_ADC_GetValue(&hadc1);
 }
 
 void adc_init_start(void)
 {
-	adc_pa1_count_conversion_init();
+	adc_pa0_count_conversion_init();
 	HAL_ADC_Start(&hadc1);
 }
 
 
-void adc_pa1_count_conversion_init(void)
+void adc_pa0_count_conversion_init(void)
 {
 	//Configure pa1 as analog pinІ
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -23,7 +26,7 @@ void adc_pa1_count_conversion_init(void)
 
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 
-	 GPIO_InitStruct.Pin = GPIO_PIN_1;
+	 GPIO_InitStruct.Pin = GPIO_PIN_0;
 	 GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
 	 GPIO_InitStruct.Pull = GPIO_NOPULL;
 	 HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -47,7 +50,7 @@ void adc_pa1_count_conversion_init(void)
 
 	 HAL_ADC_Init(&hadc1);
 
-	 sConfig.Channel =  ADC_CHANNEL_1;
+	 sConfig.Channel =  ADC_CHANNEL_0;
 	 sConfig.Rank = 1;
 	 sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
 
@@ -55,7 +58,7 @@ void adc_pa1_count_conversion_init(void)
 
 }
 
-void adc_pa1_single_conversion_init(void)
+void adc_pa0_single_conversion_init(void)
 {
 	//Configure pa1 as analog pinІ
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -64,7 +67,7 @@ void adc_pa1_single_conversion_init(void)
 
 	__HAL_RCC_GPIOA_CLK_ENABLE();
 
-	 GPIO_InitStruct.Pin = GPIO_PIN_1;
+	 GPIO_InitStruct.Pin = GPIO_PIN_0;
 	 GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
 	 GPIO_InitStruct.Pull = GPIO_NOPULL;
 	 HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -77,7 +80,7 @@ void adc_pa1_single_conversion_init(void)
 	 hadc1.Instance = ADC1;
 	 hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV8;
 	 hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-	 hadc1.Init.ContinuousConvMode = ENABLE;
+	 hadc1.Init.ContinuousConvMode = DISABLE;
 	 hadc1.Init.DiscontinuousConvMode = DISABLE;
 	 hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
 	 hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
@@ -88,7 +91,7 @@ void adc_pa1_single_conversion_init(void)
 
 	 HAL_ADC_Init(&hadc1);
 
-	 sConfig.Channel =  ADC_CHANNEL_1;
+	 sConfig.Channel =  ADC_CHANNEL_0;
 	 sConfig.Rank = 1;
 	 sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
 

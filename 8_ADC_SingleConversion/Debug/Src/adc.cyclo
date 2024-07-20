@@ -1,4 +1,4 @@
-../Src/adc.c:5:10:pa1_adc_read	1
-../Src/adc.c:10:6:adc_init_start	1
-../Src/adc.c:17:6:adc_pa1_count_conversion_init	1
-../Src/adc.c:58:6:adc_pa1_single_conversion_init	1
+../Src/adc.c:8:10:pa0_adc_read	1
+../Src/adc.c:13:6:adc_init_start	1
+../Src/adc.c:20:6:adc_pa0_count_conversion_init	1
+../Src/adc.c:61:6:adc_pa0_single_conversion_init	1

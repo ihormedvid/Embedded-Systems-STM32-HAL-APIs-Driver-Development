@@ -4,7 +4,7 @@
 #include "adc.h"
 #include "uart.h"
 
-extern ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc1;
 uint32_t sensor_value;
 
 
@@ -12,22 +12,22 @@ int main(void)
 {
 	HAL_Init();
 	uart_init();
-	adc_pa1_count_conversion_init();
+
+	adc_pa0_single_conversion_init();
 
 
-    /* Loop forever */
-	for(;;)
-	{
-		//1. Start ADC
+	while(1){
+
+		// 1. Start ADC
 		HAL_ADC_Start(&hadc1);
 
-		//2. Poll for conversion
-		 HAL_ADC_PollForConversion(&hadc1,1);
+		// 2. Poll for conversion
+		HAL_ADC_PollForConversion(&hadc1, 1);
+		// 3. Get Conversion
+		sensor_value = pa0_adc_read();
 
-		//3. Get conversion
-		sensor_value =  pa1_adc_read();
+		printf("The sensor value: %d \n\r", (int)sensor_value);
 
-	    printf("The sensor value : %d   \n\r",(int)sensor_value);
 	}
 }
 

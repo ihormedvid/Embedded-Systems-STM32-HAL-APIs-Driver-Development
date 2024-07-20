@@ -7,45 +7,45 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00002b98  080001a0  080001a0  000101a0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000058  08002d38  08002d38  00012d38  2**2
+  2 .rodata       00000054  08002d38  08002d38  00012d38  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08002d90  08002d90  00020068  2**0
+  3 .ARM.extab    00000000  08002d8c  08002d8c  00020068  2**0
                   CONTENTS
-  4 .ARM          00000008  08002d90  08002d90  00012d90  2**2
+  4 .ARM          00000008  08002d8c  08002d8c  00012d8c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08002d98  08002d98  00020068  2**0
+  5 .preinit_array 00000000  08002d94  08002d94  00020068  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08002d98  08002d98  00012d98  2**2
+  6 .init_array   00000004  08002d94  08002d94  00012d94  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08002d9c  08002d9c  00012d9c  2**2
+  7 .fini_array   00000004  08002d98  08002d98  00012d98  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000068  20000000  08002da0  00020000  2**2
+  8 .data         00000068  20000000  08002d9c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000200  20000068  08002e08  00020068  2**2
+  9 .bss          00000200  20000068  08002e04  00020068  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  20000268  08002e08  00020268  2**0
+ 10 ._user_heap_stack 00000600  20000268  08002e04  00020268  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00020068  2**0
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  00020098  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00008497  00000000  00000000  000200db  2**0
+ 13 .debug_info   00008495  00000000  00000000  000200db  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 0000173c  00000000  00000000  00028572  2**0
+ 14 .debug_abbrev 0000172a  00000000  00000000  00028570  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000760  00000000  00000000  00029cb0  2**3
+ 15 .debug_aranges 00000760  00000000  00000000  00029ca0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 0000058d  00000000  00000000  0002a410  2**0
+ 16 .debug_rnglists 0000058d  00000000  00000000  0002a400  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  000181a7  00000000  00000000  0002a99d  2**0
+ 17 .debug_macro  000181a7  00000000  00000000  0002a98d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000a05c  00000000  00000000  00042b44  2**0
+ 18 .debug_line   0000a058  00000000  00000000  00042b34  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0009b35c  00000000  00000000  0004cba0  2**0
+ 19 .debug_str    0009b35c  00000000  00000000  0004cb8c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  000024b8  00000000  00000000  000e7efc  2**2
+ 20 .debug_frame  000024b8  00000000  00000000  000e7ee8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000004e  00000000  00000000  000ea3b4  2**0
+ 21 .debug_line_str 0000004e  00000000  00000000  000ea3a0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2791,7 +2791,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8001308:	4618      	mov	r0, r3
  800130a:	bd80      	pop	{r7, pc}
  800130c:	40023800 	.word	0x40023800
- 8001310:	08002d54 	.word	0x08002d54
+ 8001310:	08002d50 	.word	0x08002d50
 
 08001314 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -2817,7 +2817,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8001330:	4618      	mov	r0, r3
  8001332:	bd80      	pop	{r7, pc}
  8001334:	40023800 	.word	0x40023800
- 8001338:	08002d54 	.word	0x08002d54
+ 8001338:	08002d50 	.word	0x08002d50
 
 0800133c <HAL_UART_Init>:
   * @param  huart  Pointer to a UART_HandleTypeDef structure that contains
@@ -3831,17 +3831,17 @@ static void UART_SetConfig(UART_HandleTypeDef *huart)
  8001acc:	e8bd 8fb0 	ldmia.w	sp!, {r4, r5, r7, r8, r9, sl, fp, pc}
  8001ad0:	51eb851f 	.word	0x51eb851f
 
-08001ad4 <pa1_adc_read>:
-#include "adc.h"
+08001ad4 <pa0_adc_read>:
 
-ADC_HandleTypeDef hadc1;
+void adc_pa0_count_conversion_init(void);
+void adc_pa0_single_conversion_init(void);
 
-uint32_t pa1_adc_read(void)
+uint32_t pa0_adc_read(void)
 {
  8001ad4:	b580      	push	{r7, lr}
  8001ad6:	af00      	add	r7, sp, #0
 	return HAL_ADC_GetValue(&hadc1);
- 8001ad8:	4802      	ldr	r0, [pc, #8]	; (8001ae4 <pa1_adc_read+0x10>)
+ 8001ad8:	4802      	ldr	r0, [pc, #8]	; (8001ae4 <pa0_adc_read+0x10>)
  8001ada:	f7fe ff56 	bl	800098a <HAL_ADC_GetValue>
  8001ade:	4603      	mov	r3, r0
 }
@@ -3849,12 +3849,12 @@ uint32_t pa1_adc_read(void)
  8001ae2:	bd80      	pop	{r7, pc}
  8001ae4:	20000088 	.word	0x20000088
 
-08001ae8 <adc_pa1_count_conversion_init>:
-	HAL_ADC_Start(&hadc1);
+08001ae8 <adc_pa0_single_conversion_init>:
+	 HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+
 }
 
-
-void adc_pa1_count_conversion_init(void)
+void adc_pa0_single_conversion_init(void)
 {
  8001ae8:	b580      	push	{r7, lr}
  8001aea:	b08c      	sub	sp, #48	; 0x30
@@ -3880,19 +3880,19 @@ void adc_pa1_count_conversion_init(void)
 	__HAL_RCC_GPIOA_CLK_ENABLE();
  8001b0c:	2300      	movs	r3, #0
  8001b0e:	60bb      	str	r3, [r7, #8]
- 8001b10:	4b2e      	ldr	r3, [pc, #184]	; (8001bcc <adc_pa1_count_conversion_init+0xe4>)
+ 8001b10:	4b2e      	ldr	r3, [pc, #184]	; (8001bcc <adc_pa0_single_conversion_init+0xe4>)
  8001b12:	6b1b      	ldr	r3, [r3, #48]	; 0x30
- 8001b14:	4a2d      	ldr	r2, [pc, #180]	; (8001bcc <adc_pa1_count_conversion_init+0xe4>)
+ 8001b14:	4a2d      	ldr	r2, [pc, #180]	; (8001bcc <adc_pa0_single_conversion_init+0xe4>)
  8001b16:	f043 0301 	orr.w	r3, r3, #1
  8001b1a:	6313      	str	r3, [r2, #48]	; 0x30
- 8001b1c:	4b2b      	ldr	r3, [pc, #172]	; (8001bcc <adc_pa1_count_conversion_init+0xe4>)
+ 8001b1c:	4b2b      	ldr	r3, [pc, #172]	; (8001bcc <adc_pa0_single_conversion_init+0xe4>)
  8001b1e:	6b1b      	ldr	r3, [r3, #48]	; 0x30
  8001b20:	f003 0301 	and.w	r3, r3, #1
  8001b24:	60bb      	str	r3, [r7, #8]
  8001b26:	68bb      	ldr	r3, [r7, #8]
 
-	 GPIO_InitStruct.Pin = GPIO_PIN_1;
- 8001b28:	2302      	movs	r3, #2
+	 GPIO_InitStruct.Pin = GPIO_PIN_0;
+ 8001b28:	2301      	movs	r3, #1
  8001b2a:	61fb      	str	r3, [r7, #28]
 	 GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
  8001b2c:	2303      	movs	r3, #3
@@ -3903,7 +3903,7 @@ void adc_pa1_count_conversion_init(void)
 	 HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
  8001b34:	f107 031c 	add.w	r3, r7, #28
  8001b38:	4619      	mov	r1, r3
- 8001b3a:	4825      	ldr	r0, [pc, #148]	; (8001bd0 <adc_pa1_count_conversion_init+0xe8>)
+ 8001b3a:	4825      	ldr	r0, [pc, #148]	; (8001bd0 <adc_pa0_single_conversion_init+0xe8>)
  8001b3c:	f7ff fa46 	bl	8000fcc <HAL_GPIO_Init>
 
 
@@ -3912,68 +3912,68 @@ void adc_pa1_count_conversion_init(void)
 	__HAL_RCC_ADC1_CLK_ENABLE();
  8001b40:	2300      	movs	r3, #0
  8001b42:	607b      	str	r3, [r7, #4]
- 8001b44:	4b21      	ldr	r3, [pc, #132]	; (8001bcc <adc_pa1_count_conversion_init+0xe4>)
+ 8001b44:	4b21      	ldr	r3, [pc, #132]	; (8001bcc <adc_pa0_single_conversion_init+0xe4>)
  8001b46:	6c5b      	ldr	r3, [r3, #68]	; 0x44
- 8001b48:	4a20      	ldr	r2, [pc, #128]	; (8001bcc <adc_pa1_count_conversion_init+0xe4>)
+ 8001b48:	4a20      	ldr	r2, [pc, #128]	; (8001bcc <adc_pa0_single_conversion_init+0xe4>)
  8001b4a:	f443 7380 	orr.w	r3, r3, #256	; 0x100
  8001b4e:	6453      	str	r3, [r2, #68]	; 0x44
- 8001b50:	4b1e      	ldr	r3, [pc, #120]	; (8001bcc <adc_pa1_count_conversion_init+0xe4>)
+ 8001b50:	4b1e      	ldr	r3, [pc, #120]	; (8001bcc <adc_pa0_single_conversion_init+0xe4>)
  8001b52:	6c5b      	ldr	r3, [r3, #68]	; 0x44
  8001b54:	f403 7380 	and.w	r3, r3, #256	; 0x100
  8001b58:	607b      	str	r3, [r7, #4]
  8001b5a:	687b      	ldr	r3, [r7, #4]
 
 	 hadc1.Instance = ADC1;
- 8001b5c:	4b1d      	ldr	r3, [pc, #116]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
- 8001b5e:	4a1e      	ldr	r2, [pc, #120]	; (8001bd8 <adc_pa1_count_conversion_init+0xf0>)
+ 8001b5c:	4b1d      	ldr	r3, [pc, #116]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
+ 8001b5e:	4a1e      	ldr	r2, [pc, #120]	; (8001bd8 <adc_pa0_single_conversion_init+0xf0>)
  8001b60:	601a      	str	r2, [r3, #0]
 	 hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV8;
- 8001b62:	4b1c      	ldr	r3, [pc, #112]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b62:	4b1c      	ldr	r3, [pc, #112]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b64:	f44f 3240 	mov.w	r2, #196608	; 0x30000
  8001b68:	605a      	str	r2, [r3, #4]
 	 hadc1.Init.Resolution = ADC_RESOLUTION_12B;
- 8001b6a:	4b1a      	ldr	r3, [pc, #104]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b6a:	4b1a      	ldr	r3, [pc, #104]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b6c:	2200      	movs	r2, #0
  8001b6e:	609a      	str	r2, [r3, #8]
-	 hadc1.Init.ContinuousConvMode = ENABLE;
- 8001b70:	4b18      	ldr	r3, [pc, #96]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
- 8001b72:	2201      	movs	r2, #1
+	 hadc1.Init.ContinuousConvMode = DISABLE;
+ 8001b70:	4b18      	ldr	r3, [pc, #96]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
+ 8001b72:	2200      	movs	r2, #0
  8001b74:	761a      	strb	r2, [r3, #24]
 	 hadc1.Init.DiscontinuousConvMode = DISABLE;
- 8001b76:	4b17      	ldr	r3, [pc, #92]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b76:	4b17      	ldr	r3, [pc, #92]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b78:	2200      	movs	r2, #0
  8001b7a:	f883 2020 	strb.w	r2, [r3, #32]
 	 hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
- 8001b7e:	4b15      	ldr	r3, [pc, #84]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b7e:	4b15      	ldr	r3, [pc, #84]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b80:	2200      	movs	r2, #0
  8001b82:	62da      	str	r2, [r3, #44]	; 0x2c
 	 hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
- 8001b84:	4b13      	ldr	r3, [pc, #76]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
- 8001b86:	4a15      	ldr	r2, [pc, #84]	; (8001bdc <adc_pa1_count_conversion_init+0xf4>)
+ 8001b84:	4b13      	ldr	r3, [pc, #76]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
+ 8001b86:	4a15      	ldr	r2, [pc, #84]	; (8001bdc <adc_pa0_single_conversion_init+0xf4>)
  8001b88:	629a      	str	r2, [r3, #40]	; 0x28
 	 hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
- 8001b8a:	4b12      	ldr	r3, [pc, #72]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b8a:	4b12      	ldr	r3, [pc, #72]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b8c:	2200      	movs	r2, #0
  8001b8e:	60da      	str	r2, [r3, #12]
 	 hadc1.Init.NbrOfConversion = 1;
- 8001b90:	4b10      	ldr	r3, [pc, #64]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b90:	4b10      	ldr	r3, [pc, #64]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b92:	2201      	movs	r2, #1
  8001b94:	61da      	str	r2, [r3, #28]
 	 hadc1.Init.DMAContinuousRequests = DISABLE;
- 8001b96:	4b0f      	ldr	r3, [pc, #60]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b96:	4b0f      	ldr	r3, [pc, #60]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001b98:	2200      	movs	r2, #0
  8001b9a:	f883 2030 	strb.w	r2, [r3, #48]	; 0x30
 	 hadc1.Init.EOCSelection =EOC_SEQ_CONV; 										//ADC_EOC_SINGLE_CONV;
- 8001b9e:	4b0d      	ldr	r3, [pc, #52]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001b9e:	4b0d      	ldr	r3, [pc, #52]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001ba0:	2200      	movs	r2, #0
  8001ba2:	615a      	str	r2, [r3, #20]
 
 	 HAL_ADC_Init(&hadc1);
- 8001ba4:	480b      	ldr	r0, [pc, #44]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001ba4:	480b      	ldr	r0, [pc, #44]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001ba6:	f7fe fd63 	bl	8000670 <HAL_ADC_Init>
 
-	 sConfig.Channel =  ADC_CHANNEL_1;
- 8001baa:	2301      	movs	r3, #1
+	 sConfig.Channel =  ADC_CHANNEL_0;
+ 8001baa:	2300      	movs	r3, #0
  8001bac:	60fb      	str	r3, [r7, #12]
 	 sConfig.Rank = 1;
  8001bae:	2301      	movs	r3, #1
@@ -3985,7 +3985,7 @@ void adc_pa1_count_conversion_init(void)
 	 HAL_ADC_ConfigChannel(&hadc1, &sConfig);
  8001bb6:	f107 030c 	add.w	r3, r7, #12
  8001bba:	4619      	mov	r1, r3
- 8001bbc:	4805      	ldr	r0, [pc, #20]	; (8001bd4 <adc_pa1_count_conversion_init+0xec>)
+ 8001bbc:	4805      	ldr	r0, [pc, #20]	; (8001bd4 <adc_pa0_single_conversion_init+0xec>)
  8001bbe:	f7fe fef1 	bl	80009a4 <HAL_ADC_ConfigChannel>
 
 }
@@ -4001,7 +4001,7 @@ void adc_pa1_count_conversion_init(void)
  8001bdc:	0f000001 	.word	0x0f000001
 
 08001be0 <main>:
-extern ADC_HandleTypeDef hadc1;
+ADC_HandleTypeDef hadc1;
 uint32_t sensor_value;
 
 
@@ -4013,31 +4013,31 @@ int main(void)
  8001be4:	f7fe fcca 	bl	800057c <HAL_Init>
 	uart_init();
  8001be8:	f000 f8d8 	bl	8001d9c <uart_init>
-	adc_pa1_count_conversion_init();
- 8001bec:	f7ff ff7c 	bl	8001ae8 <adc_pa1_count_conversion_init>
 
-    /* Loop forever */
-	for(;;)
-	{
-		//1. Start ADC
+	adc_pa0_single_conversion_init();
+ 8001bec:	f7ff ff7c 	bl	8001ae8 <adc_pa0_single_conversion_init>
+
+
+	while(1){
+
+		// 1. Start ADC
 		HAL_ADC_Start(&hadc1);
  8001bf0:	4809      	ldr	r0, [pc, #36]	; (8001c18 <main+0x38>)
  8001bf2:	f7fe fd8b 	bl	800070c <HAL_ADC_Start>
 
-		//2. Poll for conversion
-		 HAL_ADC_PollForConversion(&hadc1,1);
+		// 2. Poll for conversion
+		HAL_ADC_PollForConversion(&hadc1, 1);
  8001bf6:	2101      	movs	r1, #1
  8001bf8:	4807      	ldr	r0, [pc, #28]	; (8001c18 <main+0x38>)
  8001bfa:	f7fe fe3b 	bl	8000874 <HAL_ADC_PollForConversion>
-
-		//3. Get conversion
-		sensor_value =  pa1_adc_read();
- 8001bfe:	f7ff ff69 	bl	8001ad4 <pa1_adc_read>
+		// 3. Get Conversion
+		sensor_value = pa0_adc_read();
+ 8001bfe:	f7ff ff69 	bl	8001ad4 <pa0_adc_read>
  8001c02:	4603      	mov	r3, r0
  8001c04:	4a05      	ldr	r2, [pc, #20]	; (8001c1c <main+0x3c>)
  8001c06:	6013      	str	r3, [r2, #0]
 
-	    printf("The sensor value : %d   \n\r",(int)sensor_value);
+		printf("The sensor value: %d \n\r", (int)sensor_value);
  8001c08:	4b04      	ldr	r3, [pc, #16]	; (8001c1c <main+0x3c>)
  8001c0a:	681b      	ldr	r3, [r3, #0]
  8001c0c:	4619      	mov	r1, r3
@@ -4555,7 +4555,7 @@ LoopForever:
   ldr r1, =_edata
  8001e9c:	20000068 	.word	0x20000068
   ldr r2, =_sidata
- 8001ea0:	08002da0 	.word	0x08002da0
+ 8001ea0:	08002d9c 	.word	0x08002d9c
   ldr r2, =_sbss
  8001ea4:	20000068 	.word	0x20000068
   ldr r4, =_ebss
@@ -4922,10 +4922,10 @@ Infinite_Loop:
  80021ba:	4798      	blx	r3
  80021bc:	3601      	adds	r6, #1
  80021be:	e7f2      	b.n	80021a6 <__libc_init_array+0x1e>
- 80021c0:	08002d98 	.word	0x08002d98
- 80021c4:	08002d98 	.word	0x08002d98
- 80021c8:	08002d98 	.word	0x08002d98
- 80021cc:	08002d9c 	.word	0x08002d9c
+ 80021c0:	08002d94 	.word	0x08002d94
+ 80021c4:	08002d94 	.word	0x08002d94
+ 80021c8:	08002d94 	.word	0x08002d94
+ 80021cc:	08002d98 	.word	0x08002d98
 
 080021d0 <__retarget_lock_init_recursive>:
  80021d0:	4770      	bx	lr
@@ -5426,11 +5426,11 @@ Infinite_Loop:
  8002634:	4630      	mov	r0, r6
  8002636:	f000 f879 	bl	800272c <_printf_i>
  800263a:	e7e4      	b.n	8002606 <_vfiprintf_r+0x1ea>
- 800263c:	08002d5c 	.word	0x08002d5c
- 8002640:	08002d66 	.word	0x08002d66
+ 800263c:	08002d58 	.word	0x08002d58
+ 8002640:	08002d62 	.word	0x08002d62
  8002644:	00000000 	.word	0x00000000
  8002648:	080023f7 	.word	0x080023f7
- 800264c:	08002d62 	.word	0x08002d62
+ 800264c:	08002d5e 	.word	0x08002d5e
 
 08002650 <_printf_common>:
  8002650:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -5763,8 +5763,8 @@ Infinite_Loop:
  8002960:	f104 0619 	add.w	r6, r4, #25
  8002964:	e7f5      	b.n	8002952 <_printf_i+0x226>
  8002966:	bf00      	nop
- 8002968:	08002d6d 	.word	0x08002d6d
- 800296c:	08002d7e 	.word	0x08002d7e
+ 8002968:	08002d69 	.word	0x08002d69
+ 800296c:	08002d7a 	.word	0x08002d7a
 
 08002970 <__sflush_r>:
  8002970:	898a      	ldrh	r2, [r1, #12]
