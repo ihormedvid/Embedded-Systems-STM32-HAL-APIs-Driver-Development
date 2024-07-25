@@ -1,0 +1,11 @@
+D:/projects/stm_hal/11_ADC_DMA_MultiChannel_HAL/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	2
+D:/projects/stm_hal/11_ADC_DMA_MultiChannel_HAL/Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	2
+../Src/adc.c:9:10:pa0_adc_read	1
+../Src/adc.c:14:6:adc_init_start	1
+../Src/adc.c:21:6:adc_pa0_count_conversion_init	1
+../Src/adc.c:62:6:adc_pa0_single_conversion_init	1
+../Src/adc.c:103:6:adc_pa0_interrupt_init	1
+../Src/adc.c:148:6:adc_pa0_dma_init	1
+../Src/adc.c:217:6:adc_pa0pa4_dma_init	1
+../Src/adc.c:292:6:DMA2_Stream0_IRQHandler	1
+../Src/adc.c:298:6:ADC_IRQHandler	1
