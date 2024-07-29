@@ -1,0 +1,10 @@
+D:/projects/stm_hal/10_ADC_DMA_HAL/Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+D:/projects/stm_hal/10_ADC_DMA_HAL/Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+../Src/adc.c:9:10:pa0_adc_read	8	static
+../Src/adc.c:14:6:adc_init_start	8	static
+../Src/adc.c:21:6:adc_pa0_count_conversion_init	56	static
+../Src/adc.c:62:6:adc_pa0_single_conversion_init	56	static
+../Src/adc.c:103:6:adc_pa0_interrupt_init	56	static
+../Src/adc.c:148:6:adc_pa0_dma_init	56	static
+../Src/adc.c:216:6:DMA2_Stream0_IRQHandler	8	static
+../Src/adc.c:222:6:ADC_IRQHandler	8	static
