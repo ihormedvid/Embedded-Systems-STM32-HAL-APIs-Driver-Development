@@ -1,0 +1,7 @@
+../Src/main.c:41:5:main	1
+../Src/main.c:65:6:adxl_write	1
+../Src/main.c:73:6:adxl_read_values	1
+../Src/main.c:78:6:adxl_read_address	1
+../Src/main.c:83:6:adxl_init	1
+../Src/main.c:97:6:i2c1_init	1
+../Src/main.c:132:7:SysTick_Handler	1
